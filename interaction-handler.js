@@ -26,10 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Add interactive hover effects to project cards
     const projectCards = document.querySelectorAll('.project-card');
+    const secondaryColor = getComputedStyle(document.documentElement)
+        .getPropertyValue('--secondary-tone').trim();
     
     projectCards.forEach(function(card) {
         card.addEventListener('mouseenter', function() {
-            this.style.borderLeft = '4px solid #4a90d9';
+            this.style.borderLeft = '4px solid ' + secondaryColor;
         });
         
         card.addEventListener('mouseleave', function() {

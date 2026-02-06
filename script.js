@@ -101,21 +101,21 @@ function validateForm(data) {
     
     // Check required fields
     if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.service || !data.message) {
-        showMessage('Please fill in all required fields.', 'error');
+        showMessage(window.i18n ? window.i18n.t('booking.error.required') : 'Please fill in all required fields.', 'error');
         return false;
     }
     
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(data.email)) {
-        showMessage('Please enter a valid email address.', 'error');
+        showMessage(window.i18n ? window.i18n.t('booking.error.email') : 'Please enter a valid email address.', 'error');
         return false;
     }
     
     // Validate phone format (basic validation)
     const phoneRegex = /^[\d\s\-\+\(\)]+$/;
     if (!phoneRegex.test(data.phone)) {
-        showMessage('Please enter a valid phone number.', 'error');
+        showMessage(window.i18n ? window.i18n.t('booking.error.phone') : 'Please enter a valid phone number.', 'error');
         return false;
     }
     
@@ -126,7 +126,7 @@ function submitForm(data) {
     // Show loading state
     const submitButton = bookingForm.querySelector('.btn-submit');
     const originalText = submitButton.textContent;
-    submitButton.textContent = 'Submitting...';
+    submitButton.textContent = window.i18n ? window.i18n.t('booking.submitting') : 'Submitting...';
     submitButton.disabled = true;
     
     // Simulate API call with setTimeout
@@ -136,7 +136,7 @@ function submitForm(data) {
         submitButton.disabled = false;
         
         // Show success message
-        showMessage('Thank you! Your consultation request has been submitted. We will contact you within 24 hours.', 'success');
+        showMessage(window.i18n ? window.i18n.t('booking.success') : 'Thank you! Your consultation request has been submitted. We will contact you within 24 hours.', 'success');
         
         // Reset form
         bookingForm.reset();
@@ -166,8 +166,25 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all service cards and testimonial cards
+// Language selector handler
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize i18n
+    if (window.i18n) {
+        window.i18n.updateContent();
+        
+        const languageSelect = document.getElementById('languageSelect');
+        if (languageSelect) {
+            // Set current language in dropdown
+            languageSelect.value = window.i18n.currentLanguage;
+            
+            // Handle language change
+            languageSelect.addEventListener('change', (e) => {
+                window.i18n.setLanguage(e.target.value);
+            });
+        }
+    }
+    
+    // Add animation on scroll for service cards
     const animatedElements = document.querySelectorAll('.service-card, .testimonial-card, .stat-card');
     
     animatedElements.forEach(el => {

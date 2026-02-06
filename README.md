@@ -6,17 +6,20 @@ A professional, responsive consultation website built with HTML, CSS, and JavaSc
 
 - **Modern Design**: Clean, professional layout with gradient hero section
 - **Fully Responsive**: Works perfectly on mobile, tablet, and desktop
+- **Multi-Language Support**: Available in English, Spanish, French, and German with automatic browser language detection
 - **Interactive Elements**: Smooth scrolling, hover effects, and animations
 - **Contact Form**: Built-in booking form with validation
 - **No Dependencies**: Pure HTML, CSS, and JavaScript - no frameworks needed
 - **Webflow Ready**: Easy to upload and customize
+- **GitHub Pages**: Automatically deployed with GitHub Actions
 
 ## 📁 Project Structure
 
 ```
-├── index.html          # Main HTML structure
+├── index.html          # Main HTML structure with i18n attributes
 ├── styles.css          # Responsive CSS styling
 ├── script.js           # Interactive JavaScript
+├── i18n.js             # Internationalization with 4 languages
 ├── WEBFLOW_SETUP.md    # Detailed setup instructions
 └── README.md           # This file
 ```
@@ -57,6 +60,16 @@ The website includes:
 - **Footer**: Quick links and social media
 
 ## 🎨 Customization
+
+### Change Languages
+
+The site automatically detects the user's browser language and displays content in:
+- English (default)
+- Spanish (Español)
+- French (Français)
+- German (Deutsch)
+
+Users can manually switch languages using the language selector in the navigation bar. The selected language is saved in localStorage for future visits.
 
 ### Change Colors
 Edit CSS variables in `styles.css`:

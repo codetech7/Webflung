@@ -6,6 +6,7 @@
     <meta name="description" content="Professional consultation services to help you achieve your goals">
     <title>ConsultPro - Expert Consultation Services</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="i18n.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -16,12 +17,20 @@
                     <h1>ConsultPro</h1>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#services" class="nav-link">Services</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                    <li><a href="#booking" class="nav-link cta-btn">Book Now</a></li>
+                    <li><a href="#home" class="nav-link" data-i18n="nav.home">Home</a></li>
+                    <li><a href="#services" class="nav-link" data-i18n="nav.services">Services</a></li>
+                    <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+                    <li><a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">Testimonials</a></li>
+                    <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+                    <li><a href="#booking" class="nav-link cta-btn" data-i18n="nav.book">Book Now</a></li>
+                    <li class="language-selector">
+                        <select id="languageSelect" class="language-select">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="fr">Français</option>
+                            <option value="de">Deutsch</option>
+                        </select>
+                    </li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -36,11 +45,11 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h2 class="hero-title">Transform Your Business with Expert Consultation</h2>
-                <p class="hero-subtitle">Get personalized guidance from industry professionals to achieve your goals</p>
+                <h2 class="hero-title" data-i18n="hero.title">Transform Your Business with Expert Consultation</h2>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Get personalized guidance from industry professionals to achieve your goals</p>
                 <div class="hero-buttons">
-                    <a href="#booking" class="btn btn-primary">Schedule a Consultation</a>
-                    <a href="#services" class="btn btn-secondary">Learn More</a>
+                    <a href="#booking" class="btn btn-primary" data-i18n="hero.cta.primary">Schedule a Consultation</a>
+                    <a href="#services" class="btn btn-secondary" data-i18n="hero.cta.secondary">Learn More</a>
                 </div>
             </div>
         </div>
@@ -50,39 +59,39 @@
     <section id="services" class="services">
         <div class="container">
             <div class="section-header">
-                <h2>Our Services</h2>
-                <p>Comprehensive consultation services tailored to your needs</p>
+                <h2 data-i18n="services.title">Our Services</h2>
+                <p data-i18n="services.subtitle">Comprehensive consultation services tailored to your needs</p>
             </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">💼</div>
-                    <h3>Business Strategy</h3>
-                    <p>Develop effective strategies to grow your business and increase profitability</p>
+                    <h3 data-i18n="services.business.title">Business Strategy</h3>
+                    <p data-i18n="services.business.desc">Develop effective strategies to grow your business and increase profitability</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📊</div>
-                    <h3>Market Analysis</h3>
-                    <p>Gain insights into market trends and competitive positioning</p>
+                    <h3 data-i18n="services.market.title">Market Analysis</h3>
+                    <p data-i18n="services.market.desc">Gain insights into market trends and competitive positioning</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🎯</div>
-                    <h3>Goal Setting</h3>
-                    <p>Set clear, achievable goals and create actionable plans</p>
+                    <h3 data-i18n="services.goals.title">Goal Setting</h3>
+                    <p data-i18n="services.goals.desc">Set clear, achievable goals and create actionable plans</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">💡</div>
-                    <h3>Innovation Consulting</h3>
-                    <p>Identify opportunities for innovation and digital transformation</p>
+                    <h3 data-i18n="services.innovation.title">Innovation Consulting</h3>
+                    <p data-i18n="services.innovation.desc">Identify opportunities for innovation and digital transformation</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">👥</div>
-                    <h3>Team Development</h3>
-                    <p>Build high-performing teams and improve organizational culture</p>
+                    <h3 data-i18n="services.team.title">Team Development</h3>
+                    <p data-i18n="services.team.desc">Build high-performing teams and improve organizational culture</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">📈</div>
-                    <h3>Performance Optimization</h3>
-                    <p>Optimize processes and maximize operational efficiency</p>
+                    <h3 data-i18n="services.performance.title">Performance Optimization</h3>
+                    <p data-i18n="services.performance.desc">Optimize processes and maximize operational efficiency</p>
                 </div>
             </div>
         </div>
@@ -93,28 +102,28 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About ConsultPro</h2>
-                    <p>With over 15 years of experience in business consultation, we've helped hundreds of companies achieve their goals and overcome challenges.</p>
-                    <p>Our team of expert consultants brings diverse expertise across various industries, ensuring you receive the best possible guidance tailored to your unique situation.</p>
+                    <h2 data-i18n="about.title">About ConsultPro</h2>
+                    <p data-i18n="about.text1">With over 15 years of experience in business consultation, we've helped hundreds of companies achieve their goals and overcome challenges.</p>
+                    <p data-i18n="about.text2">Our team of expert consultants brings diverse expertise across various industries, ensuring you receive the best possible guidance tailored to your unique situation.</p>
                     <ul class="about-features">
-                        <li>✓ Certified professionals with proven track records</li>
-                        <li>✓ Customized solutions for your specific needs</li>
-                        <li>✓ Data-driven insights and recommendations</li>
-                        <li>✓ Ongoing support throughout your journey</li>
+                        <li><span data-i18n="about.feature1">✓ Certified professionals with proven track records</span></li>
+                        <li><span data-i18n="about.feature2">✓ Customized solutions for your specific needs</span></li>
+                        <li><span data-i18n="about.feature3">✓ Data-driven insights and recommendations</span></li>
+                        <li><span data-i18n="about.feature4">✓ Ongoing support throughout your journey</span></li>
                     </ul>
                 </div>
                 <div class="about-stats">
                     <div class="stat-card">
-                        <h3>500+</h3>
-                        <p>Clients Served</p>
+                        <h3 data-i18n="about.stat1.value">500+</h3>
+                        <p data-i18n="about.stat1.label">Clients Served</p>
                     </div>
                     <div class="stat-card">
-                        <h3>15+</h3>
-                        <p>Years Experience</p>
+                        <h3 data-i18n="about.stat2.value">15+</h3>
+                        <p data-i18n="about.stat2.label">Years Experience</p>
                     </div>
                     <div class="stat-card">
-                        <h3>98%</h3>
-                        <p>Satisfaction Rate</p>
+                        <h3 data-i18n="about.stat3.value">98%</h3>
+                        <p data-i18n="about.stat3.label">Satisfaction Rate</p>
                     </div>
                 </div>
             </div>
@@ -125,32 +134,32 @@
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2>What Our Clients Say</h2>
-                <p>Real feedback from businesses we've helped</p>
+                <h2 data-i18n="testimonials.title">What Our Clients Say</h2>
+                <p data-i18n="testimonials.subtitle">Real feedback from businesses we've helped</p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"ConsultPro helped us increase our revenue by 40% in just 6 months. Their strategic insights were invaluable!"</p>
+                    <p class="testimonial-text" data-i18n="testimonials.1.text">"ConsultPro helped us increase our revenue by 40% in just 6 months. Their strategic insights were invaluable!"</p>
                     <div class="testimonial-author">
-                        <strong>Sarah Johnson</strong>
-                        <span>CEO, TechStart Inc.</span>
+                        <strong data-i18n="testimonials.1.author">Sarah Johnson</strong>
+                        <span data-i18n="testimonials.1.role">CEO, TechStart Inc.</span>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"The team's expertise in market analysis gave us the competitive edge we needed. Highly recommended!"</p>
+                    <p class="testimonial-text" data-i18n="testimonials.2.text">"The team's expertise in market analysis gave us the competitive edge we needed. Highly recommended!"</p>
                     <div class="testimonial-author">
-                        <strong>Michael Chen</strong>
-                        <span>Founder, GrowthLabs</span>
+                        <strong data-i18n="testimonials.2.author">Michael Chen</strong>
+                        <span data-i18n="testimonials.2.role">Founder, GrowthLabs</span>
                     </div>
                 </div>
                 <div class="testimonial-card">
                     <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Professional, knowledgeable, and results-driven. ConsultPro transformed our business approach."</p>
+                    <p class="testimonial-text" data-i18n="testimonials.3.text">"Professional, knowledgeable, and results-driven. ConsultPro transformed our business approach."</p>
                     <div class="testimonial-author">
-                        <strong>Emily Rodriguez</strong>
-                        <span>Director, Innovate Solutions</span>
+                        <strong data-i18n="testimonials.3.author">Emily Rodriguez</strong>
+                        <span data-i18n="testimonials.3.role">Director, Innovate Solutions</span>
                     </div>
                 </div>
             </div>
@@ -161,55 +170,55 @@
     <section id="booking" class="booking">
         <div class="container">
             <div class="section-header">
-                <h2>Schedule Your Consultation</h2>
-                <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                <h2 data-i18n="booking.title">Schedule Your Consultation</h2>
+                <p data-i18n="booking.subtitle">Fill out the form below and we'll get back to you within 24 hours</p>
             </div>
             <form id="bookingForm" class="booking-form">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="firstName">First Name *</label>
+                        <label for="firstName"><span data-i18n="booking.firstName">First Name</span> *</label>
                         <input type="text" id="firstName" name="firstName" required>
                     </div>
                     <div class="form-group">
-                        <label for="lastName">Last Name *</label>
+                        <label for="lastName"><span data-i18n="booking.lastName">Last Name</span> *</label>
                         <input type="text" id="lastName" name="lastName" required>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="email">Email *</label>
+                        <label for="email"><span data-i18n="booking.email">Email</span> *</label>
                         <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="phone">Phone Number *</label>
+                        <label for="phone"><span data-i18n="booking.phone">Phone Number</span> *</label>
                         <input type="tel" id="phone" name="phone" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="company">Company Name</label>
+                    <label for="company" data-i18n="booking.company">Company Name</label>
                     <input type="text" id="company" name="company">
                 </div>
                 <div class="form-group">
-                    <label for="service">Service Interested In *</label>
+                    <label for="service"><span data-i18n="booking.service">Service Interested In</span> *</label>
                     <select id="service" name="service" required>
-                        <option value="">Select a service</option>
-                        <option value="business-strategy">Business Strategy</option>
-                        <option value="market-analysis">Market Analysis</option>
-                        <option value="goal-setting">Goal Setting</option>
-                        <option value="innovation">Innovation Consulting</option>
-                        <option value="team-development">Team Development</option>
-                        <option value="performance">Performance Optimization</option>
+                        <option value="" data-i18n-option="booking.service.select">Select a service</option>
+                        <option value="business-strategy" data-i18n-option="booking.service.business">Business Strategy</option>
+                        <option value="market-analysis" data-i18n-option="booking.service.market">Market Analysis</option>
+                        <option value="goal-setting" data-i18n-option="booking.service.goals">Goal Setting</option>
+                        <option value="innovation" data-i18n-option="booking.service.innovation">Innovation Consulting</option>
+                        <option value="team-development" data-i18n-option="booking.service.team">Team Development</option>
+                        <option value="performance" data-i18n-option="booking.service.performance">Performance Optimization</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="message">Tell us about your needs *</label>
+                    <label for="message"><span data-i18n="booking.message">Tell us about your needs</span> *</label>
                     <textarea id="message" name="message" rows="5" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="preferredDate">Preferred Consultation Date</label>
+                    <label for="preferredDate" data-i18n="booking.date">Preferred Consultation Date</label>
                     <input type="date" id="preferredDate" name="preferredDate">
                 </div>
-                <button type="submit" class="btn btn-primary btn-submit">Submit Request</button>
+                <button type="submit" class="btn btn-primary btn-submit" data-i18n="booking.submit">Submit Request</button>
             </form>
             <div id="formMessage" class="form-message"></div>
         </div>
@@ -220,42 +229,42 @@
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info">
-                    <h2>Get In Touch</h2>
-                    <p>Have questions? We're here to help!</p>
+                    <h2 data-i18n="contact.title">Get In Touch</h2>
+                    <p data-i18n="contact.subtitle">Have questions? We're here to help!</p>
                     <div class="contact-details">
                         <div class="contact-item">
                             <span class="contact-icon">📧</span>
                             <div>
-                                <strong>Email</strong>
-                                <p>contact@consultpro.com</p>
+                                <strong data-i18n="contact.email.label">Email</strong>
+                                <p data-i18n="contact.email.value">contact@consultpro.com</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">📞</span>
                             <div>
-                                <strong>Phone</strong>
-                                <p>+1 (555) 123-4567</p>
+                                <strong data-i18n="contact.phone.label">Phone</strong>
+                                <p data-i18n="contact.phone.value">+1 (555) 123-4567</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">📍</span>
                             <div>
-                                <strong>Address</strong>
-                                <p>123 Business Ave, Suite 100<br>New York, NY 10001</p>
+                                <strong data-i18n="contact.address.label">Address</strong>
+                                <p data-i18n="contact.address.value">123 Business Ave, Suite 100<br>New York, NY 10001</p>
                             </div>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">⏰</span>
                             <div>
-                                <strong>Business Hours</strong>
-                                <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                                <strong data-i18n="contact.hours.label">Business Hours</strong>
+                                <p data-i18n="contact.hours.value">Mon - Fri: 9:00 AM - 6:00 PM</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="contact-map">
                     <div class="map-placeholder">
-                        <p>📍 Map Location</p>
+                        <p data-i18n="contact.map">📍 Map Location</p>
                     </div>
                 </div>
             </div>
@@ -268,28 +277,28 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>ConsultPro</h3>
-                    <p>Expert consultation services to help your business thrive.</p>
+                    <p data-i18n="footer.tagline">Expert consultation services to help your business thrive.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4 data-i18n="footer.quicklinks">Quick Links</h4>
                     <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
-                        <li><a href="#booking">Book Now</a></li>
+                        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+                        <li><a href="#about" data-i18n="nav.about">About Us</a></li>
+                        <li><a href="#testimonials" data-i18n="nav.testimonials">Testimonials</a></li>
+                        <li><a href="#booking" data-i18n="nav.book">Book Now</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Services</h4>
+                    <h4 data-i18n="footer.services">Services</h4>
                     <ul>
-                        <li><a href="#services">Business Strategy</a></li>
-                        <li><a href="#services">Market Analysis</a></li>
-                        <li><a href="#services">Team Development</a></li>
-                        <li><a href="#services">Performance Optimization</a></li>
+                        <li><a href="#services" data-i18n="services.business.title">Business Strategy</a></li>
+                        <li><a href="#services" data-i18n="services.market.title">Market Analysis</a></li>
+                        <li><a href="#services" data-i18n="services.team.title">Team Development</a></li>
+                        <li><a href="#services" data-i18n="services.performance.title">Performance Optimization</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Connect</h4>
+                    <h4 data-i18n="footer.connect">Connect</h4>
                     <div class="social-links">
                         <a href="#" class="social-link">LinkedIn</a>
                         <a href="#" class="social-link">Twitter</a>
@@ -298,7 +307,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 ConsultPro. All rights reserved.</p>
+                <p data-i18n="footer.copyright">&copy; 2024 ConsultPro. All rights reserved.</p>
             </div>
         </div>
     </footer>

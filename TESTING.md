@@ -85,7 +85,7 @@ After a successful deployment, verify:
 - [ ] Forms are visible and styled properly
 - [ ] No console errors in browser developer tools
 - [ ] Site is mobile-responsive
-- [ ] Multilanguage selector appears and functions
+- [ ] Multi-language selector appears and functions
 
 ## Additional Notes
 

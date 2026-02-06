@@ -6,22 +6,30 @@ A professional, responsive consultation website built with HTML, CSS, and JavaSc
 
 - **Modern Design**: Clean, professional layout with gradient hero section
 - **Fully Responsive**: Works perfectly on mobile, tablet, and desktop
+- **Multi-Language Support**: Available in English, Spanish, French, and German with automatic browser language detection
 - **Interactive Elements**: Smooth scrolling, hover effects, and animations
 - **Contact Form**: Built-in booking form with validation
 - **No Dependencies**: Pure HTML, CSS, and JavaScript - no frameworks needed
 - **Webflow Ready**: Easy to upload and customize
+- **GitHub Pages**: Automatically deployed with GitHub Actions
 
 ## 📁 Project Structure
 
 ```
-├── index.html          # Main HTML structure
+├── index.html          # Main HTML structure with i18n attributes
 ├── styles.css          # Responsive CSS styling
 ├── script.js           # Interactive JavaScript
+├── i18n.js             # Internationalization with 4 languages
 ├── WEBFLOW_SETUP.md    # Detailed setup instructions
 └── README.md           # This file
 ```
 
 ## 🚀 Quick Start
+
+### View Live Site
+
+Visit the live site hosted on GitHub Pages:
+**[https://codetech7.github.io/Webflung/](https://codetech7.github.io/Webflung/)**
 
 ### View Locally
 
@@ -32,6 +40,13 @@ A professional, responsive consultation website built with HTML, CSS, and JavaSc
 ### Deploy to Webflow
 
 See [WEBFLOW_SETUP.md](WEBFLOW_SETUP.md) for detailed instructions on uploading to Webflow.
+
+### GitHub Pages Deployment
+
+This site is automatically deployed to GitHub Pages via GitHub Actions:
+- Any push to the `main` branch triggers a deployment
+- The workflow can also be manually triggered from the Actions tab
+- The site is deployed from the root directory containing all static files
 
 ## 📸 Preview
 
@@ -45,6 +60,16 @@ The website includes:
 - **Footer**: Quick links and social media
 
 ## 🎨 Customization
+
+### Change Languages
+
+The site automatically detects the user's browser language and displays content in:
+- English (default)
+- Spanish (Español)
+- French (Français)
+- German (Deutsch)
+
+Users can manually switch languages using the language selector in the navigation bar. The selected language is saved in localStorage for future visits.
 
 ### Change Colors
 Edit CSS variables in `styles.css`:

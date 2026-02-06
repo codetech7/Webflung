@@ -23,6 +23,11 @@ A professional, responsive consultation website built with HTML, CSS, and JavaSc
 
 ## 🚀 Quick Start
 
+### View Live Site
+
+Visit the live site hosted on GitHub Pages:
+**[https://codetech7.github.io/Webflung/](https://codetech7.github.io/Webflung/)**
+
 ### View Locally
 
 1. Clone this repository
@@ -32,6 +37,13 @@ A professional, responsive consultation website built with HTML, CSS, and JavaSc
 ### Deploy to Webflow
 
 See [WEBFLOW_SETUP.md](WEBFLOW_SETUP.md) for detailed instructions on uploading to Webflow.
+
+### GitHub Pages Deployment
+
+This site is automatically deployed to GitHub Pages via GitHub Actions:
+- Any push to the `main` branch triggers a deployment
+- The workflow can also be manually triggered from the Actions tab
+- The site is deployed from the root directory containing all static files
 
 ## 📸 Preview
 

@@ -1,0 +1,191 @@
+// Mobile Menu Toggle
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+
+if (hamburger && navMenu) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a nav link
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+}
+
+// Smooth Scrolling for Navigation Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = targetElement.offsetTop - navbarHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Navbar Background Change on Scroll
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.backgroundColor = '#ffffff';
+        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+    } else {
+        navbar.style.backgroundColor = '#ffffff';
+    }
+});
+
+// Form Validation and Submission
+const bookingForm = document.getElementById('bookingForm');
+const formMessage = document.getElementById('formMessage');
+
+if (bookingForm) {
+    bookingForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(bookingForm);
+        const data = {};
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+        
+        // Validate form
+        if (validateForm(data)) {
+            // Simulate form submission
+            submitForm(data);
+        }
+    });
+}
+
+function validateForm(data) {
+    // Clear previous messages
+    formMessage.className = 'form-message';
+    formMessage.textContent = '';
+    
+    // Check required fields
+    if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.service || !data.message) {
+        showMessage('Please fill in all required fields.', 'error');
+        return false;
+    }
+    
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+        showMessage('Please enter a valid email address.', 'error');
+        return false;
+    }
+    
+    // Validate phone format (basic validation)
+    const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+    if (!phoneRegex.test(data.phone)) {
+        showMessage('Please enter a valid phone number.', 'error');
+        return false;
+    }
+    
+    return true;
+}
+
+function submitForm(data) {
+    // Show loading state
+    const submitButton = bookingForm.querySelector('.btn-submit');
+    const originalText = submitButton.textContent;
+    submitButton.textContent = 'Submitting...';
+    submitButton.disabled = true;
+    
+    // Simulate API call with setTimeout
+    setTimeout(() => {
+        // Reset button
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+        
+        // Show success message
+        showMessage('Thank you! Your consultation request has been submitted. We will contact you within 24 hours.', 'success');
+        
+        // Reset form
+        bookingForm.reset();
+        
+        // Scroll to message
+        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 1500);
+}
+
+function showMessage(message, type) {
+    formMessage.textContent = message;
+    formMessage.className = `form-message ${type}`;
+}
+
+// Add animation on scroll for service cards
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, observerOptions);
+
+// Observe all service cards and testimonial cards
+document.addEventListener('DOMContentLoaded', () => {
+    const animatedElements = document.querySelectorAll('.service-card, .testimonial-card, .stat-card');
+    
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
+});
+
+// Set minimum date for consultation booking to today
+const dateInput = document.getElementById('preferredDate');
+if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+}
+
+// Add active state to navigation links based on scroll position
+window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    let current = '';
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (window.pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute('id');
+        }
+    });
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+// Console message for developers
+console.log('%c🚀 ConsultPro Website', 'color: #2563eb; font-size: 20px; font-weight: bold;');
+console.log('%cThis website is ready for Webflow hosting!', 'color: #6b7280; font-size: 14px;');

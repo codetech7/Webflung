@@ -4,12 +4,13 @@ A professional, responsive consultation website built with HTML, CSS, and JavaSc
 
 ## 🌟 Features
 
+- **Dark/Light Mode**: Toggle between dark and light themes with DaisyUI - preference saved to localStorage
 - **Modern Design**: Clean, professional layout with gradient hero section
 - **Fully Responsive**: Works perfectly on mobile, tablet, and desktop
 - **Multi-Language Support**: Available in English, Spanish, French, and German with automatic browser language detection
 - **Interactive Elements**: Smooth scrolling, hover effects, and animations
 - **Contact Form**: Built-in booking form with validation
-- **No Dependencies**: Pure HTML, CSS, and JavaScript - no frameworks needed
+- **DaisyUI Integration**: Utilizes DaisyUI for theming and styling
 - **Webflow Ready**: Easy to upload and customize
 - **GitHub Pages**: Automatically deployed with GitHub Actions
 
@@ -60,6 +61,10 @@ The website includes:
 - **Footer**: Quick links and social media
 
 ## 🎨 Customization
+
+### Switch Theme
+
+The site includes a dark/light mode toggle button in the navigation bar. Users can click the theme toggle button (moon icon for dark mode, sun icon for light mode) to switch between themes. The selected theme is automatically saved in localStorage and will persist across sessions.
 
 ### Change Languages
 

@@ -20,11 +20,28 @@
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
+/* Dark mode colors using DaisyUI theme variables */
+[data-theme="dark"] {
+    --primary-color: #60a5fa;
+    --secondary-color: #3b82f6;
+    --accent-color: #93c5fd;
+    --text-color: #f3f4f6;
+    --text-light: #9ca3af;
+    --bg-light: #1f2937;
+    --bg-white: #111827;
+    --border-color: #374151;
+    --success-color: #34d399;
+    --error-color: #f87171;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--bg-white);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 html {
@@ -45,6 +62,7 @@ html {
     width: 100%;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-wrapper {
@@ -114,6 +132,33 @@ html {
     outline: none;
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.theme-toggle {
+    background-color: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.theme-toggle:hover .theme-icon {
+    transform: scale(1.1);
+}
+
+.theme-icon {
+    transition: transform 0.3s ease;
+    line-height: 1;
 }
 
 .hamburger {
@@ -230,7 +275,7 @@ html {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .service-card:hover {
@@ -330,6 +375,7 @@ html {
     padding: 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow);
+    transition: background-color 0.3s ease;
 }
 
 .stars {
@@ -368,6 +414,7 @@ html {
     padding: 2.5rem;
     border-radius: 12px;
     box-shadow: var(--shadow-lg);
+    transition: background-color 0.3s ease;
 }
 
 .form-row {
@@ -397,6 +444,8 @@ html {
     font-family: inherit;
     font-size: 1rem;
     transition: border-color 0.3s ease;
+    background-color: var(--bg-white);
+    color: var(--text-color);
 }
 
 .form-group input:focus,
@@ -506,6 +555,7 @@ html {
     align-items: center;
     justify-content: center;
     box-shadow: var(--shadow);
+    transition: background-color 0.3s ease;
 }
 
 .map-placeholder p {
